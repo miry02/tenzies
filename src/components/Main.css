@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+body {
+  font-family: "Karla", sans-serif;
+  margin: 0;
+}
+
+.container {
+  margin: 65px 200px 0px 425px;
+  background-color: #0b2434;
+  width: 550px;
+  padding: 35px 35px 35px 35px;
+}
+
+.main {
+  background-color: #f5f5f5;
+  height: 495px;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main > h1 {
+  margin-bottom: 10px;
+}
+.main > p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 25px;
+  padding: 10px;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  height: 270px;
+  margin-bottom: 10px;
+}
+.grid-cells {
+  height: 55px;
+  width: 75px;
+  border-radius: 6px;
+  box-shadow: 0px 5px 10px rgb(207, 206, 206);
+  text-align: center;
+  text-justify: distribute;
+  color: black;
+  font-size: xx-large;
+  padding-top: 15px;
+  font-weight: 700;
+}
+.grid-cells :hover {
+  cursor: pointer;
+  background-color: greenyellow;
+}
+.main > button {
+  margin-bottom: 0px;
+  background-color: #5035ff;
+  color: white;
+  width: 155px;
+  height: 40px;
+  border: 1px solid #5035ff;
+  justify-self: center;
+  border-radius: 6px;
+  font-size: large;
+}
