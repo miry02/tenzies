@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid } from "./Grid";
 
 export const Main = () => {
+  const [dice, setDice] = useState(allNewDice());
   function allNewDice() {
     const newDice = [];
     for (let i = 0; i < 10; i++) {
-      newDice.push(Math.ceil(Math.random() * 6));
+      newDice.push({ value: Math.ceil(Math.random() * 6), isHeld: false });
     }
     return newDice;
   }
-  const mapped = newDice.map((item) => <Grid value={item} />);
+  const mapped = dice.map((item) => <Grid value={item.value} />);
+  function rollDice() {
+    setDice(allNewDice());
+  }
   return (
     <div className="main">
       <h1>Tenzies</h1>
@@ -17,18 +21,8 @@ export const Main = () => {
         Roll until all dice are the same. Click each die to freeze it at its
         current value between rolls.
       </p>
-      <div className="grid">
-        <Grid value={randomNumber} />
-        <Grid value={randomNumber} />
-        <Grid value={randomNumber} />
-        <Grid value={randomNumber} />
-        <Grid value={randomNumber} />
-        <Grid value={randomNumber} />
-        <Grid value={randomNumber} />
-        <Grid value={randomNumber} />
-        <Grid value={randomNumber} />
-      </div>
-      <button>Roll</button>
+      <div className="grid">{mapped}</div>
+      <button onClick={rollDice}>Roll</button>
     </div>
   );
 };
